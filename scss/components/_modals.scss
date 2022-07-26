@@ -1,0 +1,26 @@
+.modal {
+    // @include size(90%, 90%);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 222;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .modal-header{ @include size(100%, 20%); }
+    .modal-body{ @include size(100%, 100%); }
+    .modal-footer{ @include size(100%, 20%); }
+
+
+    @include xl {@include size(100%, 100%);}
+    @include lg {@include size(94%, 94%);}
+    @include md {@include size(93%, 93%);}
+    @include sm {@include size(88%, 92%);}
+    @include xs {@include size(85%, 90%);}
+}

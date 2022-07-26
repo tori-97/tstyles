@@ -1,0 +1,81 @@
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "dark": $dark,
+    "light": $light,
+    "success": $success,
+    "danger": $danger,
+    "warning": $warning,
+    "info": $info
+);
+
+
+@each $key, $val in $colors {
+    .bg-#{$key}{
+        background-color: $val;
+    }
+
+    .bg-hover-#{$key}{
+        &:hover {
+            background-color: lighten($val, 5);
+        }
+    }
+
+    .fg-#{$key}{
+        color: $val;
+    }
+    .fg-hover-#{$key}{
+        &:hover {
+            color: lighten($val, 5);
+        }
+    }
+
+    .bs-#{$key}{
+        box-shadow: $base-box-shadow $val;
+    }
+
+    @if( $key != "dark" and $key != "light"){
+        
+        @for $i from 1 to 9 {
+            .bg-#{$key}-light-#{$i}{
+                background-color: mix(map-get($colors, "light"), $val, $i * 10);
+            }
+
+            .bg-hover-#{$key}-light-#{$i}{
+                &:hover {
+                    background-color: mix(map-get($colors, "light"), $val, $i * 10);
+                }
+            }
+
+            .fg-#{$key}-light-#{$i}{
+                color: mix(map-get($colors, "light"), $val, $i * 10);
+            }
+            .fg-hover-#{$key}-light-#{$i}{
+                &:hover{
+                    color: mix(map-get($colors, "light"), $val, $i * 10);
+                }
+            }
+        }
+    }
+
+    @for $i from 1 to 9 {
+        .bg-#{$key}-dark-#{$i}{
+            background-color: mix(map-get($colors, "dark"), $val, $i * 10);
+        }
+        .bg-hover-#{$key}-dark-#{$i}{
+            &:hover {
+                background-color: mix(map-get($colors, "dark"), $val, $i * 10);
+            }
+        }
+
+        .fg-#{$key}-dark-#{$i}{
+            color: mix(map-get($colors, "dark"), $val, $i * 10);
+        }
+        .fg-hover-#{$key}-dark-#{$i}{
+            &:hover{
+                color: mix(map-get($colors, "dark"), $val, $i * 10);
+            }
+        }
+    }
+    
+}

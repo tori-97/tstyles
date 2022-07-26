@@ -1,0 +1,19 @@
+.navbar{
+    width: 100%;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+}
+
+@each $key, $val in $colors {
+    .navbar-#{$key} {
+        background-color: $val;
+        box-shadow: $base-box-shadow $val;
+    }
+}
+
+
+.navbar-brand {
+    font-size: 1.6rem;
+}

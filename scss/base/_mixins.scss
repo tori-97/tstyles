@@ -1,0 +1,6 @@
+// Utils mixins
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}

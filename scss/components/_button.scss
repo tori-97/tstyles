@@ -1,0 +1,22 @@
+button {
+    border: none;
+    border-radius: $base-border-radius;
+    padding: $base-padding $base-padding * 1.2;
+    min-width: 6rem;
+    cursor: pointer;
+    box-shadow: $base-box-shadow rgba(0,0,0,0.1);
+}
+
+button:active {transform: scale(.95);}
+
+@each $key, $val in $colors {
+    .btn-#{$key} {
+        text-decoration: none;
+        background-color: $val;
+
+        &:hover {
+            background-color: lighten($val, 7);
+        }
+    }
+}
+
