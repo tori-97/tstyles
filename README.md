@@ -1,4 +1,4 @@
-# Tstyles :: Started at 15.06.2022
+# Tstyles :: writen to learn better css/scss
 
 # Todo:
     [x] Grid Layout
